@@ -3,7 +3,7 @@ class Refrescos:
         self.tiporefresco=tiporefresco
         self.precio=precio
 
-refresco1=Refrescos('Coca-Cola','$15')
+refresco1=Refrescos('Coca-Cola','$150')
 print(refresco1.tiporefresco)
 print(refresco1.precio)
 refresco2=Refrescos('Pepsi','$12')
