@@ -2,8 +2,8 @@ class Refrescos:
     def __init__(self,tiporefresco,precio):
         self.tiporefresco=tiporefresco
         self.precio=precio
-
-refresco1=Refrescos('Coca-Cola','$15')
+#Hay que meter un contador 
+refresco1=Refrescos('Coca-Cola','$150 ')
 print(refresco1.tiporefresco)
 print(refresco1.precio)
 refresco2=Refrescos('Pepsi','$12')
