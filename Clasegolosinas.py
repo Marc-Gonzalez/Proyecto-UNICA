@@ -1,5 +1,3 @@
-carrito = {}
-
 class golosinas:
     def __init__(self,codigo, dulce, precio, caducidad, piezas) -> int:
         self.codigo = float(codigo)
@@ -7,6 +5,7 @@ class golosinas:
         self.precio = int(precio)
         self.caducidad = caducidad
         self.piezas = int(piezas)
+    
     def almacen(self):
         return self.piezas
 
@@ -18,6 +17,7 @@ class golosinas:
         
     def getPrecio(self):
         return self.precio
+
 
 
 class paletas(golosinas):
@@ -40,6 +40,7 @@ ferrero = chocolates(2.1,'ferrero Roshe',20,'11 noviembre',600)
 lapose = chocolates(2.2,'Lapose',7,'11 noviembre',600)
 
 almacen = {'bubbalob' : buba,'rockaleta': rocka,'sonrics':sonrics,'carlosv': carlosv,'ferrero Roshe':ferrero}
+
 listadedulces = int(input('\n\n\tescoger la categoria de dulces:\n\n\t1.paletas\n\n\t2.chocolates\n\n\t'))
 
 
@@ -59,7 +60,6 @@ if listadedulces == 1:
             print(almacen['bubbalob'].almacen())
         elif operacion == 3:
             print(f'Precio total: $ { x * buba.getPrecio()}')
-
 
     elif op2 == rocka.codigo:
         print({rocka.codigo: [rocka.dulce,rocka.precio,rocka.caducidad,rocka.piezas]})
@@ -119,6 +119,15 @@ elif listadedulces == 2:
 
     elif op3 == lapose.codigo:
         print({sonrics.codigo: [lapose.dulce,lapose.precio,lapose.caducidad,lapose.piezas]})
+        operacion = int(input('desa\n1. venta\n2. ver piezas restantes en almacen\n3. cuenta total de paletas vendidas'))
+        x = int(input('numero de dulces '))
+        if operacion== 1 :  
+            almacen['Lapose'].vender(x)
+            print(almacen['Lapose'].almacen())
+        elif operacion == 2 :
+            print(almacen['Lapose'].almacen())
+        elif operacion == 3:
+            print(f'Precio total: $ { x * lapose.getPrecio()}')
 
     else:
             print('no existe opcion')
