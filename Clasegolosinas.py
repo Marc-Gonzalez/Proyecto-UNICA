@@ -71,8 +71,8 @@ if listadedulces == 1:
             else:
                 print('error')
     
-        if op2 == rocka.codigo :
-            while(1):
+    elif op2 == rocka.codigo :
+            while(2):
                 print({rocka.codigo: [rocka.dulce,rocka.precio,rocka.caducidad,rocka.piezas]})
                 operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
                 
@@ -92,8 +92,8 @@ if listadedulces == 1:
                     break
                 else:
                     print('error')
-        if op2 == sonrics.codigo :
-            while(1):
+    elif op2 == sonrics.codigo :
+            while(3):
                 print({sonrics.codigo: [sonrics.dulce,sonrics.precio,sonrics.caducidad,sonrics.piezas]})
                 operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
                 
@@ -121,7 +121,7 @@ elif listadedulces == 2:
 
     op3 = float(input('\n\tingrese el codigo de paleta\n\t'))
     if op3 == carlosv.codigo :
-            while(1):
+            while(4):
                 print({carlosv.codigo: [carlosv.dulce,carlosv.precio,carlosv.caducidad,carlosv.piezas]})
                 operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
                 
@@ -142,7 +142,7 @@ elif listadedulces == 2:
                 else:
                     print('error')
     elif op3 == ferrero.codigo :
-            while(1):
+            while(5):
                 print({ferrero.codigo: [ferrero.dulce,ferrero.precio,ferrero.caducidad,ferrero.piezas]})
                 operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
                 
@@ -163,7 +163,7 @@ elif listadedulces == 2:
                 else:
                     print('error')
     elif op3 == lapose.codigo :
-            while(1):
+            while(6):
                 print({lapose.codigo: [lapose.dulce,lapose.precio,lapose.caducidad,lapose.piezas]})
                 operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
                 
@@ -183,8 +183,5 @@ elif listadedulces == 2:
                     break
                 else:
                     print('error')
-    
-
-
 else:
         print('no hay opciones')     
