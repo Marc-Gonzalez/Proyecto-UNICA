@@ -1,5 +1,5 @@
 def menuprincipal():
-    def mensaje_bienvenida()->None:
+    def mensaje_bienvenida():
 
         print('****BIENVENIDO A EXPENDEDORA FI****\n')
     
@@ -81,60 +81,96 @@ while respuesta != 0 :
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Coca-Cola'].vender(Op)
                              print('Disponibles: ',almacen['Coca-Cola'].almacen())
+                             print(f'Precio total: $ { Op * Refrescos1.getPrecio()}')
 
-                        elif Eleccion2==Refrescos2.codigo:
+                        try:
+                             
+                             desicion=int(input('¿Desea agregar más cosas(FAVOR DE SOLO AGREGAR NÚMEROS): \n1.SI\n2.NO\n'))
+
+                             while desicion != 1 or 2 : 
+                                
+                                if desicion ==1:
+                                     def menuprincipal():
+                                           menuprincipal()
+                                elif desicion == 2:
+                                     print('\n****GRACIAS VUELVA PRONTO ****')
+                                     menuprincipal()
+                               
+                             
+                        except: 
+                                print('Opcion Invalida! SOLO PONER NUMEROS (SOLO NÚMEROS!!!!)')
+                            
+
+                                     
+                           
+
+                    elif Eleccion2==Refrescos2.codigo:
                              print({Refrescos2.codigo:[Refrescos2.precio,Refrescos2.caducidad,Refrescos2.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Ppesi'].vender(Op)
                              print('Disponibles: ',almacen['Pepsi'].almacen())
+                             print(f'Precio total: $ { Op * Refrescos2.getPrecio()}')
+                            
 
-                        elif Eleccion2==Refrescos3.codigo:
+                    elif Eleccion2==Refrescos3.codigo:
                              print({Refrescos3.codigo:[Refrescos3.precio,Refrescos3.caducidad,Refrescos3.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Zenzao'].vender(Op)
                              print('Disponibles: ',almacen['Zenzao'].almacen())
+                             print(f'Precio total: $ { Op * Refrescos3.getPrecio()}')
+                             
 
-                        elif Eleccion2==jugos1.codigo:
+                    elif Eleccion2==jugos1.codigo:
                              print({jugos1.codigo:[jugos1.precio,jugos1.caducidad,jugos1.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Boing de mango'].vender(Op)
                              print('Disponibles: ',almacen['Boing de mango'].almacen())
+                             print(f'Precio total: $ { Op * jugos1.getPrecio()}')
+                             print(f'Precio total: $ { Op * jugos1.getPrecio()}')
 
-                        elif Eleccion2==jugos2.codigo:
+                    elif Eleccion2==jugos2.codigo:
                              print({jugos2.codigo:[jugos2.precio,jugos2.caducidad,jugos2.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Jumex de Piña'].vender(Op)
                              print('Disponibles: ',almacen['Jumex de Piña'].almacen())
+                             print(f'Precio total: $ { Op * jugos2.getPrecio()}')
+                             print(f'Precio total: $ { Op * jugos2.getPrecio()}')
 
-                        elif Eleccion2==jugos3.codigo:
+                    elif Eleccion2==jugos3.codigo:
                              print({jugos3.codigo:[jugos3.precio,jugos3.caducidad,jugos3.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Tutti de durazno'].vender(Op)
                              print('Disponibles: ',almacen['Tutti de durazno'].almacen())
+                             print(f'Precio total: $ { Op * jugos3.getPrecio()}')
+                             
 
-                        elif Eleccion2==Aguas1.codigo:
+                    elif Eleccion2==Aguas1.codigo:
                              print({Aguas1.codigo:[Aguas1.precio,Aguas1.caducidad,Aguas1.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Peñafiel de mango'].vender(Op)
                              print('Disponibles: ',almacen['Peñafiel de mango'].almacen())
-                        
-                        elif Eleccion2==Aguas2.codigo:
+                             print(f'Precio total: $ { Op * Aguas1.getPrecio()}')
+                             
+                          
+
+                    elif Eleccion2==Aguas2.codigo:
                              print({Aguas2.codigo:[Aguas2.precio,Aguas2.caducidad,Aguas2.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Peñafiel de limon'].vender(Op)
                              print('Disponibles: ',almacen['Peñafiel de limon'].almacen())
+                             print(f'Precio total: $ { Op * Aguas2.getPrecio()}')
+                            
                         
-                        elif Eleccion2==Aguas3.codigo:
+                    elif Eleccion2==Aguas3.codigo:
                              print({Aguas1.codigo:[Aguas3.precio,Aguas3.caducidad,Aguas3.piezas]})
                              Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                              almacen['Topo-Chico'].vender(Op)
                              print('Disponibles: ',almacen['Topo-Chico'].almacen())
-
-
-
-
-                
+                             print(f'Precio total: $ { Op * Aguas3.getPrecio()}')
                              
+                        
+
+
                     elif Eleccion==2: 
                         print('Perame tantito carnal')
 
