@@ -29,7 +29,6 @@ class chocolates(golosinas):
         super().__init__(codigo, dulce, precio, caducidad, piezas)
     pass
 
-    
 
 buba = paletas(1,'bubbalob',2,'10 diciembre 2023', 1000)
 rocka = paletas(1.1,'rockaleta',3,'10 diciembre 2023', 1000)
@@ -40,148 +39,164 @@ ferrero = chocolates(2.1,'ferrero Roshe',20,'11 noviembre',600)
 lapose = chocolates(2.2,'Lapose',7,'11 noviembre',600)
 
 almacen = {'bubbalob' : buba,'rockaleta': rocka,'sonrics':sonrics,'carlosv': carlosv,'ferrero Roshe':ferrero,'Lapose':lapose}
+while(True):
+    try:
+        listadedulces = int(input('\n\n\tescoger la categoria de dulces:\n\n\t1.paletas\n\n\t2.chocolates\n\n\t3.Salir'))
 
-listadedulces = int(input('\n\n\tescoger la categoria de dulces:\n\n\t1.paletas\n\n\t2.chocolates\n\n\t'))
+        if listadedulces == 1:
+            print('\n\n\tlista de paletas: \n\n\t',[{buba.codigo:buba.dulce,rocka.codigo: rocka.dulce,sonrics.codigo: buba.dulce}])
 
+            op2 = float(input('\n\tingrese el codigo de paleta\n\n\n\t'))
+                        
+            if op2 == buba.codigo :
+                while(True):
+                    try:
+                        print({buba.codigo: [buba.dulce,buba.precio,buba.caducidad,buba.piezas]})
+                        operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\n4.Salir\n5.regresar a la opcion'))
+                        
+                        if operacion== 1 :  
+                            print(almacen['bubbalob'].almacen())
+                            continue  
+                        elif operacion == 2 :
+                            x = int(input('numero de dulces '))
+                            almacen['bubbalob'].vender(x)
+                            print(almacen['bubbalob'].almacen())
+                            continue
+                        elif operacion == 3:
+                            print(f'Precio total: $ { x * buba.getPrecio()}')
+                            continue
+                        # elif operacion == 4:
+                        #     regresar = int(input('¿Quiere agregar algo al menu?\n elige : \n1.SI\n2.NO\n'))
+                        #     if regresar == 2:
 
-if listadedulces == 1:
-    print('\n\n\tlista de paletas: \n\n\t',[{buba.codigo:buba.dulce,rocka.codigo: rocka.dulce,sonrics.codigo: buba.dulce}])
-
-    op2 = float(input('\n\tingrese el codigo de paleta\n\n\n\t'))
-                
-    if op2 == buba.codigo :
-        while(1):
-            print({buba.codigo: [buba.dulce,buba.precio,buba.caducidad,buba.piezas]})
-            operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
+                                
+                        elif operacion == 4:
+                            print('salir')
+                            break
+                        else:
+                            print('error')
+                    except:
+                        print('\n\tSOLO NUMEROS \n\t')
             
-            if operacion== 1 :  
-                print(almacen['bubbalob'].almacen())
-                continue  
-            elif operacion == 2 :
-                x = int(input('numero de dulces '))
-                almacen['bubbalob'].vender(x)
-                print(almacen['bubbalob'].almacen())
-                continue
-            elif operacion == 3:
-                print(f'Precio total: $ { x * buba.getPrecio()}')
-                continue
-            elif operacion == 4:
-                print('salir')
-                break
-            else:
-                print('error')
-    
-    elif op2 == rocka.codigo :
-            while(2):
-                print({rocka.codigo: [rocka.dulce,rocka.precio,rocka.caducidad,rocka.piezas]})
-                operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
-                
-                if operacion== 1 :  
-                    print(almacen['rockaleta'].almacen())
-                    continue  
-                elif operacion == 2 :
-                    x = int(input('numero de dulces '))
-                    almacen['rockaleta'].vender(x)
-                    print(almacen['rockaleta'].almacen())
-                    continue
-                elif operacion == 3:
-                    print(f'Precio total: $ { x * rocka.getPrecio()}')
-                    continue
-                elif operacion == 4:
-                    print('salir')
-                    break
-                else:
-                    print('error')
-    elif op2 == sonrics.codigo :
-            while(3):
-                print({sonrics.codigo: [sonrics.dulce,sonrics.precio,sonrics.caducidad,sonrics.piezas]})
-                operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
-                
-                if operacion== 1 :  
-                    print(almacen['sonrics'].almacen())
-                    continue  
-                elif operacion == 2 :
-                    x = int(input('numero de dulces '))
-                    almacen['sonrics'].vender(x)
-                    print(almacen['sonrics'].almacen())
-                    continue
-                elif operacion == 3:
-                    print(f'Precio total: $ { x * sonrics.getPrecio()}')
-                    continue
-                elif operacion == 4:
-                    print('salir')
-                    break
-                else:
-                    print('error')
+            elif op2 == rocka.codigo :
+                    while(True):
+                        print({rocka.codigo: [rocka.dulce,rocka.precio,rocka.caducidad,rocka.piezas]})
+                        operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\n4.Salirn5.elige otro numero para volver añadir al carrito\n'))
+                        
+                        if operacion== 1 :  
+                            print(almacen['rockaleta'].almacen())
+                            continue  
+                        elif operacion == 2 :
+                            x = int(input('numero de dulces '))
+                            almacen['rockaleta'].vender(x)
+                            print(almacen['rockaleta'].almacen())
+                            continue
+                        elif operacion == 3:
+                            print(f'Precio total: $ { x * rocka.getPrecio()}')
+                            continue
+                        elif operacion == 4:
+                            print('salir')
+                            break
+                        else:
+                            print('error')
+            elif op2 == sonrics.codigo :
+                    while(True):
+                        print({sonrics.codigo: [sonrics.dulce,sonrics.precio,sonrics.caducidad,sonrics.piezas]})
+                        operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar4.Salir\n5.elige otro numero para volver añadir al carrito\n'))
+                        
+                        if operacion== 1 :  
+                            print(almacen['sonrics'].almacen())
+                            continue  
+                        elif operacion == 2 :
+                            x = int(input('numero de dulces '))
+                            almacen['sonrics'].vender(x)
+                            print(almacen['sonrics'].almacen())
+                            continue
+                        elif operacion == 3:
+                            print(f'Precio total: $ { x * sonrics.getPrecio()}')
+                            continue
+                        elif operacion == 4:
+                            print('salir')
+                            break
+                        else:
+                            print('error')
 
-    
-elif listadedulces == 2:
-    
-    print('\n\n\tlista de Chocolate: \n\n\t',[{carlosv.codigo:carlosv.dulce,ferrero.codigo: ferrero.dulce,lapose.codigo: lapose.dulce}])
+            
+        elif listadedulces == 2:
+            
+            print('\n\n\tlista de Chocolate: \n\n\t',[{carlosv.codigo:carlosv.dulce,ferrero.codigo: ferrero.dulce,lapose.codigo: lapose.dulce}])
 
-    op3 = float(input('\n\tingrese el codigo de paleta\n\t'))
-    if op3 == carlosv.codigo :
-            while(4):
-                print({carlosv.codigo: [carlosv.dulce,carlosv.precio,carlosv.caducidad,carlosv.piezas]})
-                operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
+            op3 = float(input('\n\tingrese el codigo de paleta\n\t'))
+            if op3 == carlosv.codigo :
+                    while(True):
+                        print({carlosv.codigo: [carlosv.dulce,carlosv.precio,carlosv.caducidad,carlosv.piezas]})
+                        operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar4.Salirn5.elige otro numero para volver añadir al carrito\n'))
+                        
+                        if op3== 1 :  
+                            print(almacen['carlosv'].almacen())
+                            continue  
+                        elif operacion == 2 :
+                            x = int(input('numero de dulces '))
+                            almacen['carlosv'].vender(x)
+                            print(almacen['carlosv'].almacen())
+                            continue
+                        elif operacion == 3:
+                            print(f'Precio total: $ { x * carlosv.getPrecio()}')
+                            continue
+                        elif operacion == 4:
+                            print('salir')
+                            break
+                        else:
+                            print('error')
+            elif op3 == ferrero.codigo :
+                    while(5):
+                        print({ferrero.codigo: [ferrero.dulce,ferrero.precio,ferrero.caducidad,ferrero.piezas]})
+                        operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar4.Salir\n5.elige otro numero para volver añadir al carrito\n'))
+                        
+                        if op3== 1 :  
+                            print(almacen['ferrero Roshe'].almacen())
+                            continue  
+                        elif operacion == 2 :
+                            x = int(input('numero de dulces '))
+                            almacen['ferrero Roshe'].vender(x)
+                            print(almacen['ferrero Roshe'].almacen())
+                            continue
+                        elif operacion == 3:
+                            print(f'Precio total: $ { x * ferrero.getPrecio()}')
+                            continue
+                        elif operacion == 4:
+                            print('salir')
+                            break
+                        else:
+                            print('error')
+            elif op3 == lapose.codigo :
+                    while(True):
+                        print({lapose.codigo: [lapose.dulce,lapose.precio,lapose.caducidad,lapose.piezas]})
+                        operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar4.Salirn5.elige otro numero para volver añadir al carrito\n'))
+                        
+                        if op3== 1 :  
+                            print(almacen['Lapose'].almacen())
+                            continue  
+                        elif operacion == 2 :
+                            x = int(input('numero de dulces '))
+                            almacen['Lapose'].vender(x)
+                            print(almacen['Lapose'].almacen())
+                            continue
+                        elif operacion == 3:
+                            print(f'Precio total: $ { x * lapose.getPrecio()}')
+                            continue
+                        elif operacion == 4:
+                            print('salir')
+                            break
+                        else:
+                            print('error')
+            elif op3 == 3 :
+                print('\SALIR\n')
                 
-                if op3== 1 :  
-                    print(almacen['carlosv'].almacen())
-                    continue  
-                elif operacion == 2 :
-                    x = int(input('numero de dulces '))
-                    almacen['carlosv'].vender(x)
-                    print(almacen['carlosv'].almacen())
-                    continue
-                elif operacion == 3:
-                    print(f'Precio total: $ { x * carlosv.getPrecio()}')
-                    continue
-                elif operacion == 4:
-                    print('salir')
-                    break
-                else:
-                    print('error')
-    elif op3 == ferrero.codigo :
-            while(5):
-                print({ferrero.codigo: [ferrero.dulce,ferrero.precio,ferrero.caducidad,ferrero.piezas]})
-                operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
-                
-                if op3== 1 :  
-                    print(almacen['ferrero Roshe'].almacen())
-                    continue  
-                elif operacion == 2 :
-                    x = int(input('numero de dulces '))
-                    almacen['ferrero Roshe'].vender(x)
-                    print(almacen['ferrero Roshe'].almacen())
-                    continue
-                elif operacion == 3:
-                    print(f'Precio total: $ { x * ferrero.getPrecio()}')
-                    continue
-                elif operacion == 4:
-                    print('salir')
-                    break
-                else:
-                    print('error')
-    elif op3 == lapose.codigo :
-            while(6):
-                print({lapose.codigo: [lapose.dulce,lapose.precio,lapose.caducidad,lapose.piezas]})
-                operacion = int(input('\n1.Mostrar y Escoger Golosinas\n2.2.Quitar golosinas\n3.Pagar\5.Salir\n'))
-                
-                if op3== 1 :  
-                    print(almacen['Lapose'].almacen())
-                    continue  
-                elif operacion == 2 :
-                    x = int(input('numero de dulces '))
-                    almacen['Lapose'].vender(x)
-                    print(almacen['Lapose'].almacen())
-                    continue
-                elif operacion == 3:
-                    print(f'Precio total: $ { x * lapose.getPrecio()}')
-                    continue
-                elif operacion == 4:
-                    print('salir')
-                    break
-                else:
-                    print('error')
-else:
-        print('no hay opciones')     
+        elif listadedulces == 3:
+            print('\tSALIR DE GOLOSINAS\n')
+            break
+        else:
+                print('no hay opciones')     
+    except:
+        print('------------------SOLO IMPRIME LOS NUMEROS POR FAVOR ----------')
