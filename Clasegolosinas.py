@@ -1,4 +1,5 @@
-
+"""ESTA CLASE ES LA CLASE PADRE PARA TODAS LAS GOLOSINAS Y
+CON SU RESPECTIVO CONSTRUCTOR PARA ASIGNAR A LOS OBJETOS"""
 class golosinas:
     def __init__(self,codigo, dulce, precio, caducidad, piezas) -> int:
         self.codigo = float(codigo)
@@ -6,21 +7,21 @@ class golosinas:
         self.precio = int(precio)
         self.caducidad = caducidad
         self.piezas = int(piezas)
-    
+    """ESTA ES LA FUNCION  ES PARA RETORNAR LAS PIEZAS """
     def almacen(self):
         return self.piezas
-
+    """ESTA ES LA FUNCION PARA AGREGAR EL NUMERO DE PIEZAS """
     def agregar(self,cantidad):
         self.piezas +=  cantidad
-
+    """ESTA ES LA FUNCION PARA HACER LA VENTA DE LAS PIEZAS"""
     def vender(self, cantidad):
         self.piezas -= cantidad
-        
+    """ESTA ES LA FUNCION """ 
     def getPrecio(self):
         return self.precio
 
 
-
+"""ESTAS SON CLASES HIJAS CON ATRIBUTOS HEREDADOS QUE SE DISTINGUEN UNA DE OTRA """
 class paletas(golosinas):
     def __init__(self, codigo,dulce, precio, caducidad, piezas) -> int:
         super().__init__(codigo,dulce, precio, caducidad, piezas)
@@ -30,7 +31,7 @@ class chocolates(golosinas):
         super().__init__(codigo, dulce, precio, caducidad, piezas)
     pass
 
-
+""" ESTOS SON LOS VALORES QUE LE VAMOS A ASIGNAR A LAS HIJAS DEL PADRE"""
 buba = paletas(1,'bubbalob',2,'10 diciembre 2023', 1000)
 rocka = paletas(1.1,'rockaleta',3,'10 diciembre 2023', 1000)
 sonrics = paletas(1.2,'sonricks',4,'10 diciembre 2023', 1000)
@@ -39,16 +40,20 @@ carlosv = chocolates(2,'carlosv',8,'11 noviembre',600)
 ferrero = chocolates(2.1,'ferrero Roshe',20,'11 noviembre',600)
 lapose = chocolates(2.2,'Lapose',7,'11 noviembre',600)
 
+"""AQUI HICIMOS UN DICCIONARIO ALMACEN QUE NOS VA A SERVIR PARA MOSTRAR EL INVENTARIO TOTAL"""
 almacen = {'bubbalob' : buba,'rockaleta': rocka,'sonrics':sonrics,'carlosv': carlosv,'ferrero Roshe':ferrero,'Lapose':lapose}
+
+"""AQUI HACEMOS LA ELECCIÓN DE LAS CATEGORIAS DE DULCES  Y TAMBIEN MOSTRAREMOS EL INVENTARIO DISPONIBLE Y LA OPCION SALIR"""
+
 while(True):
     try:
         listadedulces = int(input('\n\n\tescoger la categoria de dulces:\n\n\t1.paletas\n\n\t2.chocolates\n\n\t3.Mostrar almacen disponible\n\n\t4.Salir\n'))
 
         if listadedulces == 1:
-            print('\n\n\tlista de paletas: \n\n\t',[{buba.codigo:buba.dulce,rocka.codigo: rocka.dulce,sonrics.codigo: buba.dulce}])
-
+            print('\n\n\tlista de paletas: \n\n\t',[{buba.codigo:buba.dulce,rocka.codigo: rocka.dulce,sonrics.codigo: sonrics.dulce}])
+            """AQUI HICIMOS EL MENU PARA LA ELECCION DE LAS PALETAS EN EL ALMACEN """
             op2 = float(input('\n\tingrese el codigo de paleta\n\n\n\t'))
-                        
+           
             if op2 == buba.codigo :
                 while(True):
                     try:
@@ -59,11 +64,13 @@ while(True):
                             print({buba.codigo: [buba.dulce,buba.precio,buba.caducidad,buba.piezas]})
                             continue  
                         elif operacion == 2 :
+                            """AQUI VENDEMOS LAS PALETAS """
                             x = int(input('numero de dulces '))
                             almacen['bubbalob'].vender(x)
                             print(almacen['bubbalob'].almacen())
                             continue
                         elif operacion == 3:
+                            """AQUI HACEMOS EL PRECIO TOTAL POR LAS PALETAS DE ELECCION DE X """
                             print(f'Precio total: $ { x * buba.getPrecio()}')
                             continue     
                         elif operacion == 4:
@@ -117,12 +124,12 @@ while(True):
                             break
                     except:
                         print('\n\tSOLO NUMEROS \n\t')
-    
+           
         elif listadedulces == 2:
-            
+            """AQUI HICIMOS EL MENU PARA LA ELECCION DE LAS CHOCOLATE EN EL ALMACEN """
             print('\n\n\tlista de Chocolate: \n\n\t',[{carlosv.codigo:carlosv.dulce,ferrero.codigo: ferrero.dulce,lapose.codigo: lapose.dulce}])
 
-            op3 = float(input('\n\tingrese el codigo de paleta\n\t'))
+            op3 = float(input('\n\tingrese el codigo de CHOCOLATE\n\t'))
             if op3 == carlosv.codigo :
                 while(True):
                     try:
@@ -189,32 +196,15 @@ while(True):
             elif op3 == 3 :
                 print('\SALIR\n')
         elif listadedulces == 3:
+            """AQUI MOSTRAMOS EL ALMACEN MODIFICADO """
             for al in almacen:
                 print({almacen[al].codigo: [almacen[al].dulce,almacen[al].precio,almacen[al].caducidad,almacen[al].piezas]})
+            
         elif listadedulces == 4:
+            """AQUI SALIMOS DE TODDO"""
             print('\tSALIR DE GOLOSINAS\n')
             break
         else:
                 print('no hay opciones')     
     except:
         print('------------------SOLO IMPRIME LOS NUMEROS POR FAVOR ----------')
-
-
-# buba = paletas(1,'bubbalob',2,'10 diciembre 2023', 1000)
-# rocka = paletas(1.1,'rockaleta',3,'10 diciembre 2023', 1000)
-# sonrics = paletas(1.2,'sonricks',4,'10 diciembre 2023', 1000)
-
-# carlosv = chocolates(2,'carlosv',8,'11 noviembre',600)
-# ferrero = chocolates(2.1,'ferrero Roshe',20,'11 noviembre',600)
-# lapose = chocolates(2.2,'Lapose',7,'11 noviembre',600)
-catalogo_precios = {'chicle' : 2,'rockaleta': 3,'sonrics':4,'carlosv': 8,'ferrero Roshe':20,'Lapose':7}
-carrito = {}
-for precio in catalogo_precios:
-#     # PRIMERA VEZ
-#     #     carrito["rocaleta"] = 15
-# #     EN CUALQUIER OTRO CASO
-
-    carrito[almacen] = carrito['chicle'] + carrito['rockaleta'] + carrito['sonrics'] + carrito['carlosv'] + carrito['ferrero Roshe'] +  carrito['Lapose']
-    carrito --> {'chicle' : 2,'rockaleta': 3,'sonrics':4,'carlosv': 8,'ferrero Roshe':20,'Lapose':7}
-# #     CALCULAR EL PRECIO
-    precio_total = carrito['chicle'] *buba[precio] + carrito['rockaleta'] + carrito['sonrics'] + carrito['carlosv'] + carrito['ferrero Roshe'] + carrito['Lapose']
