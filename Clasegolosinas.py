@@ -1,3 +1,4 @@
+
 class golosinas:
     def __init__(self,codigo, dulce, precio, caducidad, piezas) -> int:
         self.codigo = float(codigo)
@@ -199,3 +200,21 @@ while(True):
         print('------------------SOLO IMPRIME LOS NUMEROS POR FAVOR ----------')
 
 
+# buba = paletas(1,'bubbalob',2,'10 diciembre 2023', 1000)
+# rocka = paletas(1.1,'rockaleta',3,'10 diciembre 2023', 1000)
+# sonrics = paletas(1.2,'sonricks',4,'10 diciembre 2023', 1000)
+
+# carlosv = chocolates(2,'carlosv',8,'11 noviembre',600)
+# ferrero = chocolates(2.1,'ferrero Roshe',20,'11 noviembre',600)
+# lapose = chocolates(2.2,'Lapose',7,'11 noviembre',600)
+catalogo_precios = {'chicle' : 2,'rockaleta': 3,'sonrics':4,'carlosv': 8,'ferrero Roshe':20,'Lapose':7}
+carrito = {}
+for precio in catalogo_precios:
+#     # PRIMERA VEZ
+#     #     carrito["rocaleta"] = 15
+# #     EN CUALQUIER OTRO CASO
+
+    carrito[almacen] = carrito['chicle'] + carrito['rockaleta'] + carrito['sonrics'] + carrito['carlosv'] + carrito['ferrero Roshe'] +  carrito['Lapose']
+    carrito --> {'chicle' : 2,'rockaleta': 3,'sonrics':4,'carlosv': 8,'ferrero Roshe':20,'Lapose':7}
+# #     CALCULAR EL PRECIO
+    precio_total = carrito['chicle'] *buba[precio] + carrito['rockaleta'] + carrito['sonrics'] + carrito['carlosv'] + carrito['ferrero Roshe'] + carrito['Lapose']
