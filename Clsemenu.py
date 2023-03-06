@@ -113,6 +113,9 @@ while respuesta != 0 :
                                 print({almacen[Chescos].codigo:[almacen[Chescos].precio,almacen[Chescos].caducidad,almacen[Chescos].piezas]})
                                 Op=int(input('\n1.¿Cuántas piezas desea llevar?\n'))
                                 almacen[Chescos].vender(Op)
+
+                                """En esta parte lo que se realiza es mostrar el total a pagar y el número de piezas que el usuario a adquirido """
+                                
                                 print('Disponibles: ',almacen[Chescos].almacen())
                                 print(f'Precio total: $ { Op * almacen[Chescos].getPrecio()}')
                                 
